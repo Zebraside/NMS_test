@@ -12,5 +12,5 @@ add_subdirectory(utils)
 add_subdirectory(tests)
 
 add_executable(main main.cpp)
-target_link_libraries(main PRIVATE utils CONAN_PKG::benchmark CONAN_PKG::opencv)
+target_link_libraries(main PRIVATE nms_utils CONAN_PKG::benchmark CONAN_PKG::opencv)
 
