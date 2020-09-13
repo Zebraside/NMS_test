@@ -1,0 +1,7 @@
+[requires]
+benchmark/1.5.1
+gtest/1.10.0
+opencv/4.3.0@conan/stable
+
+[generators]
+cmake
