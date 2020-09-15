@@ -8,7 +8,7 @@ add_compile_options(-Wall -Wextra -pedantic -Werror "$<$<CONFIG:RELEASE>:-O3>")
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
 
-add_subdirectory(utils)
+add_subdirectory(nms_utils)
 add_subdirectory(tests)
 
 add_executable(main main.cpp)
