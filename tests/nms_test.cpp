@@ -2,7 +2,7 @@
 
 #include "nms_test.h"
 
-TEST_P(NMSTest, test_nms_real_fast) {
+TEST_P(NMSTest, test_nms) {
     auto params = GetParam();
     auto indices = NMSUtils::nms(params.boxes, params.scores, params.threshhold);
 
@@ -61,22 +61,6 @@ std::vector<size_t> referenceNMS(const std::vector<NMSUtils::Rect>& boxes, const
     }
 
     return idxs;
-}
-
-TEST_P(NMSTest, test_nms_reference) {
-    auto params = GetParam();
-    auto indices = referenceNMS(params.boxes, params.scores, params.threshhold);
-
-    auto expected = params.expected;
-
-    ASSERT_EQ(indices.size(), expected.size());
-
-    std::sort(indices.begin(), indices.end());
-    std::sort(expected.begin(), expected.end());
-
-    for (size_t i = 0; i < indices.size(); ++i) {
-        ASSERT_EQ(indices[i], expected[i]);
-    }
 }
 
 std::vector<NMSTestParams> generateRandomNMSTestParams() {
