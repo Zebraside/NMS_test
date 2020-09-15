@@ -22,6 +22,6 @@ In the project root:
 `$ mkdir build`  
 `$ cd build`  
 `$ conan install ..`  
-`$ cmake ..`  
-`$ make -j8`  
+`$ cmake  -DCMAKE_BUILD_TYPE=Release ..`  
+`$ make -j6`  
 
