@@ -6,12 +6,12 @@
 
 #include "nms.h"
 
-std::vector<Rect> generateBoxes(size_t size) {
+std::vector<NMSUtils::Rect> generateBoxes(size_t size) {
     std::default_random_engine generator;
     std::uniform_int_distribution<int> box_dist(0,1000);
     auto box_param = std::bind ( box_dist, generator );
 
-    std::vector<Rect> bboxes;
+    std::vector<NMSUtils::Rect> bboxes;
     for (size_t i = 0; i < size; ++i) {
         bboxes.push_back({box_param(), box_param(), box_param(), box_param()});
     }
@@ -62,5 +62,4 @@ static void BM_nms_opencv(benchmark::State& state) {
 BENCHMARK(BM_nms_real_fast)->RangeMultiplier(10)->Range(10, 100'000)->Unit(benchmark::kMicrosecond);
 BENCHMARK(BM_nms_opencv)->RangeMultiplier(10)->Range(10, 100'000)->Unit(benchmark::kMicrosecond);
 
-// Run the benchmark
 BENCHMARK_MAIN();

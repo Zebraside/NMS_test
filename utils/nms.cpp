@@ -13,11 +13,11 @@ namespace NMSUtils {
         return std::max(0, maxX - minX) * std::max(0, maxY - minY);
     }
 
-    static inline int rect_area(const Rect& a) {
+    inline int rect_area(const Rect& a) {
         return a.w * a.h;
     }
 
-    float iou(const Rect &a, const Rect &b) {
+    inline float iou(const Rect &a, const Rect &b) {
         float inersect_area = intersect_area(a, b);
         return inersect_area / (rect_area(a) + rect_area(b) - inersect_area);
     }

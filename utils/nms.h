@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 
+namespace NMSUtils {
 /*
     NOTE: (x,y) - coordinates of left bottom corner of the rect. w, h - width and height respectively
     /------\
@@ -16,8 +17,6 @@ struct Rect {
     int w;
     int h;
 };
-
-namespace NMSUtils {
 
 // nms - performs non-maximum suppression operation
 // boxes - bounding boxes
